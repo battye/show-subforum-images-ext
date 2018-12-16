@@ -1,0 +1,7 @@
+services:
+    battye.subforumimages.listener:
+        class: battye\subforumimages\event\main_listener
+        arguments:
+            - '@dbal.conn'
+        tags:
+            - { name: event.listener }

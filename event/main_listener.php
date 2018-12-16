@@ -51,7 +51,7 @@ class main_listener implements EventSubscriberInterface
 	 */
 	public function display_forums_modify_template_vars($event)
 	{
-		if (is_array($event['subforums_row']) && sizeof($event['subforums_row']))
+		if (is_array($event['subforums_row']) && count($event['subforums_row']))
 		{
 			$forum_ids = array();
 			$subforums = $event['subforums_row'];

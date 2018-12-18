@@ -35,13 +35,20 @@ class main_listener implements EventSubscriberInterface
 	private $db;
 
 	/**
+	 * @var string
+	 */
+	private $root_path;
+
+	/**
 	 * Constructor
 	 *
 	 * @param driver_interface $db
+	 * @param $root_path
 	 */
-	public function __construct(driver_interface $db)
+	public function __construct(driver_interface $db, $root_path)
 	{
 		$this->db = $db;
+		$this->root_path = $root_path;
 	}
 
 	/**
@@ -76,7 +83,8 @@ class main_listener implements EventSubscriberInterface
 			// Add the subforum image to the template array
 			foreach ($forum_images as $forum_id => $forum_image)
 			{
-				$subforum_references[$forum_id]['U_SUBFORUM_IMAGE'] = $forum_image;
+				$path = (!empty($forum_image)) ? $this->root_path . $forum_image : '';
+				$subforum_references[$forum_id]['U_SUBFORUM_IMAGE'] = $path;
 			}
 
 			$event['subforums_row'] = array_values($subforum_references);

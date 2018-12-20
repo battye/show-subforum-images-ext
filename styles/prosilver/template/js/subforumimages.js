@@ -17,4 +17,10 @@ $(document).ready(function() {
 
     // Remove the existing subforums
     $('.subforum').remove();
+
+    // Get the width of each forum image, and pad accordingly
+    $('.list-inner .forum-image ~ .sfi-subforum-block').each(function() {
+        var width = $(this).siblings('.forum-image').first().children('img').first().width();
+        $(this).css('margin-left', (width - 20));
+    });
 });

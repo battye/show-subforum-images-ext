@@ -3,17 +3,17 @@
  * phpBB Extension
  */
 
-.sfi_subforum {
+.sfi-subforum {
     display: block;
     margin-top: 5px;
 }
 
-.sfi_subforum_image {
+.sfi-subforum-image {
     width: 20px;
     vertical-align: middle;
 }
 
-.sfi_subforum_no_image {
+.sfi-subforum-no-image {
     display: inline-block;
     width: 20px;
 }

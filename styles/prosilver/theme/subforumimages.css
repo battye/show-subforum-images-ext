@@ -17,3 +17,7 @@
     display: inline-block;
     width: 20px;
 }
+
+.sfi-subforum-block {
+    clear: both;
+}
